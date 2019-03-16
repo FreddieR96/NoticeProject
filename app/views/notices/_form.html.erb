@@ -1,0 +1,21 @@
+
+<%= form_with(model: @notice, local: true) do |f| %>
+
+<% if @notice.errors.any? %>
+	<% @notice.errors[:title].each do |msg| %>
+		<%= msg %><br>
+	<% end %>
+<% end %>
+
+<p>
+	<%= f.label :title, "Notice title" %><br>
+	<%= f.text_field :title %>
+</p>
+
+<p>
+	<%= f.label :body, "Notice text" %><br>
+	<%= f.text_area :body %>
+<p>
+	<%= f.submit "Submit Notice" %>
+
+<% end %> 

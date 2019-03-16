@@ -1,0 +1,9 @@
+<% @body = simple_format(notice.body) %>
+<div class = "notice">
+<h1><%= notice.title %></h1><br>
+<% if notice.body.present? %>
+<p><%= @body %></p>
+<% else %>
+<p>The user hasn't entered any text for this notice</p>
+<% end %>
+</div>
