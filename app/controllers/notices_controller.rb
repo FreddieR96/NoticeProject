@@ -20,9 +20,12 @@ def destroy
 	@notice = Notice.find(params[:id])
 	@notice.destroy
 	
-	redirect_to admin_admin_path
+	redirect_to backend_menu_path
+end
+
 private
 	def notice_params
 		params.require(:notice).permit(:title, :body)
 	end
 end
+
