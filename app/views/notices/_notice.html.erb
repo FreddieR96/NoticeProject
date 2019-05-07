@@ -6,4 +6,7 @@
 <% else %>
 <p>The user hasn't entered any text for this notice</p>
 <% end %>
+<% if notice.descpic.attached? %>
+<%= image_tag notice.descpic %>
+<% end %>
 </div>

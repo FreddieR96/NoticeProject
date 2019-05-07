@@ -1,0 +1,10 @@
+<%= form_tag("/search", method: :get, id: "searchform") do %>
+	<%= label_tag(:title, "Search for notices", id: "searchlabel", class: "searchforms") %>
+	<%= text_area_tag(:title) %><br>
+	
+	<%= label_tag(:notecategory, "Notice type", id: "searchcategory", class: "searchforms") %>
+	<%= select_tag(:notecategory, options_for_select([['Any', ''], 'Announcement', 'Sale', 'Personal', 'Warning'])) %>
+	
+
+<% end %>
+	

@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-	employee = Employee.where(username: params[:username])
-	if employee && employee.authenticate(params[:password])
-	session[:admin] = employee.id
+	admin = Admin.where(username: params[:username]).first
+	if admin && admin.authenticate(params[:password])
+	session[:admin] = admin.id
 	redirect_to backend_menu_path
 	else
 	redirect_to backend_home_path

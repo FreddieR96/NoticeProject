@@ -1,8 +1,11 @@
-
-<%= form_with(model: @notice, local: true) do |f| %>
+<div class = "holdform">
+<%= form_with(model: @notice) do |f| %>
 
 <% if @notice.errors.any? %>
 	<% @notice.errors[:title].each do |msg| %>
+		<%= msg %><br>
+	<% end %>
+	<% @notice.errors[:body].each do |msg| %>
 		<%= msg %><br>
 	<% end %>
 <% end %>
@@ -15,7 +18,19 @@
 <p>
 	<%= f.label :body, "Notice text" %><br>
 	<%= f.text_area :body %>
+</p>
+
+<p>
+	<%= f.label :notecategory, "What is your notice type?" %><br>
+	<%= f.select(:notecategory, [['Any', nil],'Announcement', 'Sale', 'Personal','Warning']) %>
+</p>
+
+<p>
+	<%= f.label :descpic, "Upload a picture for your notice (optional)" %><br>
+	<%= f.file_field(:descpic) %>
+</p>
 <p>
 	<%= f.submit "Submit Notice" %>
-
+</p>
 <% end %> 
+</div>

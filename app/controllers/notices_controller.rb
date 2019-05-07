@@ -4,6 +4,7 @@ def create
 	respond_to do |f|
 		if @notice.save
 			f.html { redirect_back fallback_location: root_path }
+			f.js
 		else	
 			f.html { render 'main/home' }
 		end
@@ -25,7 +26,7 @@ end
 
 private
 	def notice_params
-		params.require(:notice).permit(:title, :body)
+		params.require(:notice).permit(:title, :body, :notecategory, :descpic)
 	end
 end
 
