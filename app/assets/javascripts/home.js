@@ -12,9 +12,9 @@ $('.tabbox').add($('a').find('.tabbox')).on('mouseover', function(event) {
 $('.tabbox:not(.toptabbox)').on('mouseout', function(event) {
 	$(event.target).removeClass('hoverbox');
 	var removeDelay = window.setTimeout(function() {
-	$(event.target).parents('#bigoldbox').find('.tabbox:not(.toptabbox)').hide();
-}, 300);
-	$('.tabbox').add($('a').find('.tabbox')).on('mouseover', function() {
+	$(event.target).parents('.menubox').find('.tabbox:not(.toptabbox)').hide();
+}, 200);
+	$(event.target).add($(event.target).parents('.menubox').find('.tabbox')).on('mouseover', function() {
 	window.clearTimeout(removeDelay)
 	});
 });
@@ -22,8 +22,8 @@ $('.toptabbox').on('mouseout', function(event) {
 	$(event.target).removeClass('hoverbox');
 	var removeTopDelay = window.setTimeout(function() {
 	$(event.target).siblings().hide();
-	}, 300);
-	$('.tabbox').add($('a').find('.tabbox')).on('mouseover', function() {
+	}, 200);
+	$(event.target).add($(event.target).siblings()).on('mouseover', function() {
 	window.clearTimeout(removeTopDelay)
 	});
 });
