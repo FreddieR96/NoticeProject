@@ -14,6 +14,6 @@ resources :notices, except: [:index, :new]
 resources :sessions, only: [:new, :create, :destroy]
 get 'last3', to: 'main#last3'
 get 'searchresults', to: 'main#searchresults'
-
+get 'addreport/:notice_id/:admin_id/:zetype', to: 'reports#add', as: :add_report
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,9 +2,8 @@ class Notice < ApplicationRecord
 validates :title, presence: { message: "%{model} needs a %{attribute}" }
 validate :picturebody
 has_one_attached :descpic
-
 validates :descpic, blob: { content_type: :image }
-
+has_many :reports
 private 
 def picturebody
 	if body.blank? && descpic.attached?

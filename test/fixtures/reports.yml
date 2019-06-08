@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notice_id: 1
+  admin_id: 1
+  type: 
+  reported: false
+
+two:
+  notice_id: 1
+  admin_id: 1
+  type: 
+  reported: false

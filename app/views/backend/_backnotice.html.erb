@@ -1,5 +1,16 @@
 <div id = "notice-<%= backnotice.id %>">
 <span class = "backtext"><%= backnotice.title %></span> | 
 <span class = "backtext"><%= link_to "Show", notice_path(backnotice) %></span> | 
-<span class = "backtext"><%= link_to "Destroy", notice_path(backnotice), method: :delete %></span>
+<span class = "backtext"><%= link_to "Destroy", notice_path(backnotice), method: :delete %></span><b>
+<div class = "hold-reports">
+<% ["Obscene", "Abuse", "Illegal"].each do |t| %>
+<%= link_to add_report_path(backnotice, @theadmin, t), remote: true do %>
+<% if backnotice.reports.where(admin_id: @theadmin.id, reported: true, zetype: t).any? %>
+<div class = "report-button <%= t %> <%= t %>-report"></div>
+<% else %> 
+<div class = "report-button <%= t %> <%= t %>-unreported"></div>
+<% end %>
+<% end %>
+<% end %>
+</div>
 </div>

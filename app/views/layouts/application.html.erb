@@ -5,12 +5,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
 <body>
 
 <div class = "titlebox">
 <h1>Noticeboard</h1>
+<p></p>
 <div id = "bigoldbox">
 <div class = "menubox">
 <div class = "tabbox toptabbox">Header</div>
@@ -31,14 +33,14 @@
 </div>
 </div>
 </div>
-<div class = "underbox">
+
 <%= link_to root_path do %>
 <div class = "navbox"><span class = "navtext">Home</span></div>
 <% end %>
 <%= link_to archive_path do %>
 <div class = "navbox"><span class = "navtext">Archive</span></div>
 <% end %>
-</div>
+
 
     <%= yield %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

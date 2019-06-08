@@ -5,6 +5,7 @@ def home
   end
 
   def menu
+	@theadmin = Admin.find(session[:admin].to_i)
 	@notices = Notice.all
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_132626) do
+ActiveRecord::Schema.define(version: 2019_06_05_143034) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2019_04_02_132626) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "notecategory"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "notice_id"
+    t.integer "admin_id"
+    t.string "zetype"
+    t.boolean "reported"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

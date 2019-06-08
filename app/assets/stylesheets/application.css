@@ -15,49 +15,110 @@
  */
 
 body {
-	text-align: centre;
+	margin-top: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-family: Didot, serif;
+	background-image: radial-gradient(circle closest-corner at 96% 96%, #ffb3b3, #ffb3b3 90%, #fff5e6 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	}
+a:link {
+	text-decoration-line: none;
+}
+.navbox:hover {
+	color: red;
+}
+a > .tabbox {
+	color: #630;
+}
 .titlebox {
+	color: #630;
+	background-image: linear-gradient(to top right, #fff5e6, #fff5e6 50%, #ffb3b3 100%);
 	padding: 5px;
-	border-width: 5px;
+	border-width: 2px;
 	border-style: solid;
-	border-color: yellow;
+	border-color: black;
 	}
 .navbox {
+	color: black;
+	margin-top: 5px;
 	margin-right: 5px;
 	float: left;
 	width: 55px;
 	padding: 5px;
-	border-width: 5px;
+	border-width: 2px;
 	border-style: solid;
-	border-color: yellow;
+	border-color: black;
 	text-align: center;
-	}
-.underbox {
-	margin-top: 25px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: yellow;
-	width: 500px;
-	height: 80px;
 	}
 .navtext {
 	margin-left: auto;
 	margin-right: auto;
 	}
-.notice {
-	text-align: centre;
+#noticecol {
 	margin-left: auto;
 	margin-right: auto;
+	width: 33vh;
+	
+}
+.hold-reports {
+	height: 150px;
+	width: 400px;
+}
+.report-button {
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+	float: left;
+	margin-right: 10px;
+}
+.Obscene-report {
+	background-color: red;
+}
+.Abuse-report {
+	background-color: orange;
+}
+.Illegal-report {
+	background-color: green;
+}
+.Obscene-unreported {
+	background-color: #800000;
+}
+.Abuse-unreported {
+	background-color: #802000;
+}
+.Illegal-unreported {
+	background-color: #004d00
+}
+.unreported {
+	background-color: black;
+}
+.notice {
+	
+	text-align: center;
 	border-style: solid;
-	border-width: 5px;
-	border-color: yellow;
-	width: 250px;
+	border-width: 2px;
+	border-color: black;
+	width: 90%;
 	padding: 5px;
-	margin-bottom: 20px;
+	margin-top: 20px;
+	
 	}
+@media only screen and (min-width: 1000px) {
+.notice {
+		width: 40%;
+		margin-right: 4%;
+		float: left;
+		clear: right;
+}
+}
+.notice > h1 {
+	line-height: 1.2;
+}
 .holdform {
-	display: inline-block;
+	display: block;
+	margin-top: 50px;
 	}
 .timebox {
 	border-style: solid;
@@ -87,7 +148,6 @@ body {
 }
 #bigoldbox {
 	width: 360px;
-	background-color: blue;
 	position: absolute;
 	top: 45px;
 	right: 100px; 
@@ -95,7 +155,8 @@ body {
 .menubox {
 	float: left;
 	width: 120px;
-	background-color: red;
+	background-color: #ffb3b3;
+	margin-right: -1px;
 }
 .tabbox {
 	font-size: 12px;
