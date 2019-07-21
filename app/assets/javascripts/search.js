@@ -16,20 +16,4 @@ $formname.on('keyup', function() {
 });
 };
 $formname.on('keyup', updateForm);
-//$formcatname.on('change', formAjax);
-//$formcatname.on('change', formAjax); 
-
-
-/* function lastThreeAjax() {
-$formdata = $formname.val();
-$formdatalength = $formdata.length;
-	$.ajax({
-		type: "GET",
-		url: "/last3",
-		data: { zeform: $formdata, zeformlength: $formdatalength }
-		});
-	}; 
-function showBox() {
-	$('#returnbox').html('Voila');
-};
-$formname.on('keyup', lastThreeAjax); */
+$formcatname.on('change', updateForm);
