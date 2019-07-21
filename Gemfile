@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.13'
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -27,13 +26,13 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '<= 3.1.12'
 
 # Use ActiveStorage variant
- gem 'mini_magick', '~> 4.8'
+# gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
- gem 'bootsnap' , '<= 1.4.1'
+ gem 'bootsnap' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
