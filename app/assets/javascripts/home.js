@@ -28,22 +28,30 @@ $('.toptabbox').on('mouseout', function(event) {
 	});
 });
 
-function loadLastWeek() {
+function loadTimeData(timestring) {
 var xhr = new XMLHttpRequest();
 $abox.html('');
 xhr.onload = function () {
-	var lweeknotices = JSON.parse(xhr.responseText);
+	var timeData = JSON.parse(xhr.responseText);
 	var weekstring = '';
 	
-	$(lweeknotices).each(function(){
+	$(timeData).each(function(){
 		weekstring += this.title + '<br>'
 	});
 	$abox.append(weekstring);
 };
-xhr.open('GET', 'search/lastmonth.json', true);
+xhr.open('GET', 'search/' + timestring + '.json', true);
 xhr.send(null);
 };
-$('#monthnotices').on('click', loadLastWeek);
+$('#monthnotices').on('click', function() {
+	loadTimeData("lastmonth")
+});
+$('#weeknotices').on('click', function() {
+	loadTimeData("lastweek")
+});
+$('#firsttab').on('click', function() {
+	loadTimeData("alltime")
+});
 
 $timetabs.on('click', function(event) {
 	$timetabs.each(function() {
@@ -53,4 +61,3 @@ $timetabs.on('click', function(event) {
 	});
 	$(event.target).addClass('clickedtimebox');
 });
-
